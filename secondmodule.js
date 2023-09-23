@@ -1,4 +1,4 @@
-// ----------object and array-----------------------
+// ----------object and array notes-----------------------
 
 
 
@@ -200,11 +200,59 @@
 
 // we can use fnction as a object too, function is a very powerfull thing
 
-function power(names){
-    console.log("function called",names)
-}
+// function power(names){
+//     console.log("function called",names)
+// }
 
-power.id=20;
+// power.id=20;
 
-power("sahil")
-console.log(power.id);
+// power("sahil")
+// console.log(power.id);
+
+//function jab ececontect me memory me jata hai tb function plus object combo ki trah store hota hai 
+
+//now start methods ...this is basically method of function's object version
+
+//they all are used to control the context of this keyboard because this keyboard show different results in different situations
+
+// call method
+// call method is used to change the context of this to another object, we can use 1 objects function into another object 
+// this method is usefull when you write a function and want to use in many objects
+
+
+// let user1 = {
+//     name:"sahil",
+
+    // greetings: function(){
+    //     console.log(`name is ${this.name}`)
+    // }
+
+// }
+
+// function greetings(){
+//     console.log(`name is ${this.name }`)
+// }
+
+
+// let user2 = {
+//     name:"dhiman"  // now suppose we have 1000 names and we cannot copy same function everywhere
+
+// }
+
+// user1.greetings()
+//if we have global 
+// greetings.call(user1)//jo phela argument hoga woh this ke reference ko change krega and jo age ke argument hoga woh as a argument hi jaega
+// greetings.call(user2)
+
+// now for using same function in every object is doing by changing the context of this 
+
+// user1.greetings.call(user2) // user2 ko call kro or user 1 ka gretting function bulao
+
+
+// we can create greting function to global too like below
+
+//apply method is exaclty same bs second argument isme array me dalke dete hai 
+// ex in call method- call(user1,"delhi",18)
+//in apply - call(user1,["sahil",19])
+
+//3rd method - bind method
