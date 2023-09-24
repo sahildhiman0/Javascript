@@ -256,3 +256,19 @@
 //in apply - call(user1,["sahil",19])
 
 //3rd method - bind method
+// it returns a new function
+
+// let user1 = {
+//     name:"sahil" ,
+//     sayHi: function(age,place){
+//         console.log(`hiii ${this.name} from ${place} of age ${age}`)
+//     }
+// }
+
+// let user2 = {
+//     name:"rakesh kumar"
+// }
+// user1.sayHi(20,"haryana")
+
+// let bindtest = user1.sayHi.bind(user2,60,"delhi")
+// bindtest()
