@@ -54,3 +54,13 @@
 // elementname.classlist.add
 // elementname.classlist.remove
 // elementname.className{exaclty} = "what you want to put here"
+
+
+// we have more properties like firstchild, last child, next sibling, previous siblings etc
+
+// events listner
+
+// Elementreference.addeventlistner('click',function,{once:true(if we want to run only one time)})//type of event, event function (callback function)
+
+// we should remove the event because if millions of user click on this and then memory leak haopens
+//we use settimeout  button.removeeventlistner,3000

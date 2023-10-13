@@ -22,7 +22,7 @@ let hex =[
 //function to generate random no between 0 to 15 (0 and 15 included)
 function random()
 {
-    const randomNum = Math.floor(Math.random() * 16);
+    const randomNum = Math.floor(Math.random() * hex.length);
     return randomNum;
 }
 
