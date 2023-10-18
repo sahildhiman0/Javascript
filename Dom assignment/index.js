@@ -66,11 +66,16 @@
 //     counter++
 //     changes.innerText = counter
 // })
+
+
 // decrease.addEventListener("click",()=>{
 //     counter--
-//     changes.innerText = counter
 //     if(counter<0){
 //         alert("you cannot go below zero")
+//         counter++
+//     }
+//     else{
+//         changes.innerText = counter
 //     }
 // })
 
@@ -139,10 +144,24 @@
 
 // answer 7th
 
-let input = document.getElementById('input')
+      const input = document.getElementById("input");
+      const itemList = document.querySelectorAll('li')
 
-input.addEventListener('keyup',(event)=>{
-    console.log(event.target.value);
-    
 
-})
+      input.addEventListener("input", ()=> {
+
+        const finalvalue = input.value.toLowerCase();
+
+        for (let i = 0; i < itemList.length; i++) {
+
+          const itemText = itemList[i].innerText.toLowerCase();
+          
+
+          if (itemText.includes(finalvalue)) {
+            itemList[i].style.display = "block";
+          } else {
+            itemList[i].style.display = "none";
+          }
+        }
+
+      });
