@@ -144,24 +144,43 @@
 
 // answer 7th
 
-      const input = document.getElementById("input");
-      const itemList = document.querySelectorAll('li')
+      // const input = document.getElementById("input");
+      // const itemList = document.querySelectorAll('li')
 
 
-      input.addEventListener("input", ()=> {
+      // input.addEventListener("input", ()=> {
 
-        const finalvalue = input.value.toLowerCase();
+      //   const finalvalue = input.value.toLowerCase();
 
-        for (let i = 0; i < itemList.length; i++) {
+      //   for (let i = 0; i < itemList.length; i++) {
 
-          const itemText = itemList[i].innerText.toLowerCase();
+      //     const itemText = itemList[i].innerText.toLowerCase();
           
 
-          if (itemText.includes(finalvalue)) {
-            itemList[i].style.display = "block";
-          } else {
-            itemList[i].style.display = "none";
-          }
-        }
+      //     if (itemText.includes(finalvalue)) {
+      //       itemList[i].style.display = "list-item";
+      //     } else {
+      //       itemList[i].style.display = "none";
+      //     }
+      //   }
 
-      });
+      // });
+      
+
+
+      function updateTime(){
+      let format = document.getElementById("span")
+      let body = document.body
+
+      const date = new Date();
+      const formattedHours = String(date.getHours()).padStart(2, '0');
+      const formattedMinutes = String(date.getMinutes()).padStart(2, '0');
+      const formattedSeconds = String(date.getSeconds()).padStart(2, '0');
+      
+      format.innerText = `${formattedHours} : ${formattedMinutes} : ${formattedSeconds}`
+      let color = `#${formattedHours}${formattedMinutes}${formattedSeconds}`;
+      body.style.backgroundColor = color
+      console.log(color);
+          
+      }
+      setInterval(updateTime, 1000);
