@@ -168,19 +168,45 @@
       
 
 
-      function updateTime(){
-      let format = document.getElementById("span")
-      let body = document.body
+      // function updateTime(){
+      // let format = document.getElementById("span")
+      // let body = document.body
 
-      const date = new Date();
-      const formattedHours = String(date.getHours()).padStart(2, '0');
-      const formattedMinutes = String(date.getMinutes()).padStart(2, '0');
-      const formattedSeconds = String(date.getSeconds()).padStart(2, '0');
+      // const date = new Date();
+      // const formattedHours = String(date.getHours()).padStart(2, '0');
+      // const formattedMinutes = String(date.getMinutes()).padStart(2, '0');
+      // const formattedSeconds = String(date.getSeconds()).padStart(2, '0');
       
-      format.innerText = `${formattedHours} : ${formattedMinutes} : ${formattedSeconds}`
-      let color = `#${formattedHours}${formattedMinutes}${formattedSeconds}`;
-      body.style.backgroundColor = color
-      console.log(color);
+      // format.innerText = `${formattedHours} : ${formattedMinutes} : ${formattedSeconds}`
+      // let color = `#${formattedHours}${formattedMinutes}${formattedSeconds}`;
+      // body.style.backgroundColor = color
+      // console.log(color);
           
+      // }
+      // setInterval(updateTime, 1000);
+
+
+      let login = document.getElementById("login")
+      let logout = document.getElementById("logout")
+      let heading = document.getElementById("heading")
+
+     login.onclick = function(){
+           localStorage.setItem('isAuthenticated', 'hello');   
+           isAuthenticated()
       }
-      setInterval(updateTime, 1000);
+      logout.onclick = function(){
+            localStorage.removeItem('isAuthenticated');
+            isAuthenticated()
+      }
+
+
+      function isAuthenticated() {
+            let checking = localStorage.getItem('isAuthenticated') === 'hello';
+            if (checking) {
+                  heading.innerText = "User is logged in"
+            } else {
+                  heading.innerText = "User has logged out"
+                }
+                
+      }
+      
